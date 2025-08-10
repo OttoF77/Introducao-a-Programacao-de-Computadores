@@ -63,7 +63,7 @@ int main() {
 
     //imprime os dados das cartas
     printf("Carta 1: \n");
-    printf("Estado: %c\n", c1_estado);
+    printf("Estado: %s\n", c1_estado);
     printf("Codigo: %s\n", c1_codigo);
     printf("Cidade: %s\n", c1_cidade);
     printf("Populacao: %d\n", c1_populacao);
@@ -74,7 +74,7 @@ int main() {
     printf("\n\n");
 
     printf("Carta 2: \n");
-    printf("Estado: %c\n", c2_estado);
+    printf("Estado: %s\n", c2_estado);
     printf("Codigo: %s\n", c2_codigo);
     printf("Cidade: %s\n", c2_cidade);
     printf("Populacao: %d\n", c2_populacao);
