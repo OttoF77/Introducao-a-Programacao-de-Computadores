@@ -213,41 +213,6 @@ int main() {
         printf("Opção inválida!\n");
         break;
     }
-
-
-    /* Implementar a lógica de comparação entre duas cartas com base no atributo selecionado pelo jogador. Os atributos disponíveis são:
- 
-    Nome do país (string - usado apenas para exibir informações, não para comparação direta)
- 
-    População (int)
-    
-    Área (float)
-    
-    PIB (float)
-    
-    Número de pontos turísticos (int)
-    
-    Densidade demográfica (float - já calculada no desafio anterior).
-    
-    Regras de Comparação: A regra geral é: vence a carta com o maior valor no atributo escolhido. Porém, para a Densidade Demográfica, a regra inverte: vence a carta com o menor valor.
-    */
-    //Exemplo de comparação de atributos
-
-    //Comparar um atributo das duas cartas
-    //Atributo escolhido: PIB per capita
-    // printf("Comparação de cartas (Atributo: PIB per capita): \n");
-    
-    // printf("Carta 1 - %s (%s): %.f \n", c1_cidade, c1_estado, c1_pib_per_capita);
-
-    // printf("Carta 2 - %s (%s): %.f \n", c2_cidade, c2_estado, c2_pib_per_capita);
-
-    // if (c1_pib_per_capita > c2_pib_per_capita){
-    //     printf("Carta 1 vence!\n");
-    // } else if (c1_pib_per_capita < c2_pib_per_capita){
-    //     printf("Carta 2 vence!\n");
-    // } else {
-    //     printf("Empate!\n");
-    // }
     
     return 0;
 }
