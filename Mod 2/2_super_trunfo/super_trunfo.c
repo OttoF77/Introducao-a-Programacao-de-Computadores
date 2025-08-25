@@ -102,116 +102,123 @@ int main() {
 
     //Cria o menu de comparação
     int opcao;
+    int escolhido1, escolhido2, escolhido3, escolhido4, escolhido5, contador = 0;
+    float c1_resultado = 0;
+    float c2_resultado = 0;
+    char menu[300] = "Escolha o atributo para comparar as cartas:\n"
+                     "1 - População\n"
+                     "2 - Área\n"
+                     "3 - PIB\n"
+                     "4 - Número de Pontos Turísticos\n"
+                     "5 - Densidade Demográfica\n"
+                     "6 - Sair do jogo\n";
     
-    printf("Escolha o atributo para comparar as cartas:\n");
-    printf("1 - População\n");
-    printf("2 - Área\n");
-    printf("3 - PIB\n");
-    printf("4 - Número de Pontos Turísticos\n");
-    printf("5 - Densidade Demográfica\n");
+    menu_loop:
+    printf("%s", menu);
 
     scanf("%d", &opcao);
     
     switch (opcao)
     {
-    case 1:
-        if (c1_populacao > c2_populacao){
-            printf("*** Estado: %s X Estado: %s ***\n", c1_estado, c2_estado);
-            printf("Comparando População...\n");
-            printf("Estado: %s - População: %lu X Estado: %s - População: %lu\n", c1_estado, c1_populacao, c2_estado, c2_populacao);
-            printf("Estado: %s vence!\n", c1_estado);
-        } else if (c1_populacao < c2_populacao){
-            printf("*** Estado: %s X Estado: %s ***\n", c1_estado, c2_estado);
-            printf("Comparando População...\n");
-            printf("Estado: %s - População: %lu X Estado: %s - População: %lu\n", c1_estado, c1_populacao, c2_estado, c2_populacao);
-            printf("Estado: %s vence!\n", c2_estado);
-        } else {
-            printf("*** Estado: %s X Estado: %s ***\n", c1_estado, c2_estado);
-            printf("Comparando População...\n");
-            printf("Estado: %s - População: %lu X Estado: %s - População: %lu\n", c1_estado, c1_populacao, c2_estado, c2_populacao);
-            printf("Partida empatada!\n");
-        }
-        break;
+        case 1:
+            if (escolhido1 == 0){
+                c1_populacao > c2_populacao ? printf("Estado: %s vence!\n", c1_estado) : printf("Estado: %s vence!\n", c2_estado);
+                c1_resultado += c1_populacao;
+                c2_resultado += c2_populacao;
+                escolhido1 = 1;
+                contador++;
+            } else {
+                printf("Atributo já escolhido, escolha outro!\n");
+            }
+            
+            if(contador == 2) {
+                break;
+            } else {
+                goto menu_loop;
+            }
 
-    case 2:
-        if (c1_area > c2_area){
-            printf("*** Estado: %s X Estado: %s ***\n", c1_estado, c2_estado);
-            printf("Comparando Área...\n");
-            printf("Estado: %s - Área: %.2f km² X Estado: %s - Área: %.2f km²\n", c1_estado, c1_area, c2_estado, c2_area);
-            printf("Estado: %s vence!\n", c1_estado);
-        } else if (c1_area < c2_area){
-            printf("*** Estado: %s X Estado: %s ***\n", c1_estado, c2_estado);
-            printf("Comparando Área...\n");
-            printf("Estado: %s - Área: %.2f km² X Estado: %s - Área: %.2f km²\n", c1_estado, c1_area, c2_estado, c2_area);
-            printf("Estado: %s vence!\n", c2_estado);
-        } else {
-            printf("*** Estado: %s X Estado: %s ***\n", c1_estado, c2_estado);
-            printf("Comparando Área...\n");
-            printf("Estado: %s - Área: %.2f km² X Estado: %s - Área: %.2f km²\n", c1_estado, c1_area, c2_estado, c2_area);
-            printf("Partida empatada!\n");
-        }
-        break;
+        case 2:
+            if (escolhido2 == 0){
+                c1_area > c2_area ? printf("Estado: %s vence!\n", c1_estado) : printf("Estado: %s vence!\n", c2_estado);
+                c1_resultado += c1_area;
+                c2_resultado += c2_area;
+                escolhido2 = 1;
+                contador++;
+            } else {
+                printf("Atributo já escolhido, escolha outro!\n");
+            }
+            
+            if(contador == 2) {
+                break;
+            } else {
+                goto menu_loop;
+            }
+            
+        case 3:
+            if (escolhido3 == 0){
+                c1_pib > c2_pib ? printf("Estado: %s vence!\n", c1_estado) : printf("Estado: %s vence!\n", c2_estado);
+                c1_resultado += c1_pib;
+                c2_resultado += c2_pib;
+                escolhido3 = 1;
+                contador++;
+            } else {
+                printf("Atributo já escolhido, escolha outro!\n");
+            }
+            
+            if(contador == 2) {
+                break;
+            } else {
+                goto menu_loop;
+            }
+            
+        case 4:
+            if(escolhido4 == 0){
+                c1_ponto > c2_ponto ? printf("Estado: %s vence!\n", c1_estado) : printf("Estado: %s vence!\n", c2_estado);
+                c1_resultado += c1_ponto;
+                c2_resultado += c2_ponto;
+                escolhido4 = 1;
+                contador++;
+            } else {
+                printf("Atributo já escolhido, escolha outro!\n");
+            }
+            
+            if(contador == 2) {
+                break;
+            } else {
+                goto menu_loop;
+            }
 
-    case 3:
-        if (c1_pib > c2_pib){
-            printf("*** Estado: %s X Estado: %s ***\n", c1_estado, c2_estado);
-            printf("Comparando PIB...\n");
-            printf("Estado: %s - PIB: %.2f bilhões de US$ X Estado: %s - PIB: %.2f bilhões de US$\n", c1_estado, c1_pib, c2_estado, c2_pib);
-            printf("Estado: %s vence!\n", c1_estado);
-        } else if (c1_pib < c2_pib){
-            printf("*** Estado: %s X Estado: %s ***\n", c1_estado, c2_estado);
-            printf("Comparando PIB...\n");
-            printf("Estado: %s - PIB: %.2f bilhões de US$ X Estado: %s - PIB: %.2f bilhões de US$\n", c1_estado, c1_pib, c2_estado, c2_pib);
-            printf("Estado: %s vence!\n", c2_estado);
-        } else {
-            printf("*** Estado: %s X Estado: %s ***\n", c1_estado, c2_estado);
-            printf("Comparando PIB...\n");
-            printf("Estado: %s - PIB: %.2f bilhões de US$ X Estado: %s - PIB: %.2f bilhões de US$\n", c1_estado, c1_pib, c2_estado, c2_pib);
-            printf("Partida empatada!\n");
-        }
-        break;
+        case 5:
+            if (escolhido5 == 0){
+                c1_inv_densidade > c2_inv_densidade ? printf("Estado: %s vence!\n", c1_estado) : printf("Estado: %s vence!\n", c2_estado);
+                c1_resultado += c1_inv_densidade;
+                c2_resultado += c2_inv_densidade;
+                escolhido5 = 1;
+                contador++;
+            } else {
+                printf("Atributo já escolhido, escolha outro!\n");
+            }
+            if (contador == 2) {
+                break;
+            } else {
+                goto menu_loop;
+            }
+            
+        case 6:
+            printf("Saindo do jogo...\n");
+            break;
+            
+        default:
+            printf("Opção inválida!\n");
+            break;
+    }
 
-    case 4:
-        if (c1_ponto > c2_ponto){
-            printf("*** Estado: %s X Estado: %s ***\n", c1_estado, c2_estado);
-            printf("Comparando Número de Pontos Turísticos...\n");
-            printf("Estado: %s - Pontos Turísticos: %d X Estado: %s - Pontos Turísticos: %d\n", c1_estado, c1_ponto, c2_estado, c2_ponto);
-            printf("Estado: %s vence!\n", c1_estado);
-        } else if (c1_ponto < c2_ponto){
-            printf("*** Estado: %s X Estado: %s ***\n", c1_estado, c2_estado);
-            printf("Comparando Número de Pontos Turísticos...\n");
-            printf("Estado: %s - Pontos Turísticos: %d X Estado: %s - Pontos Turísticos: %d\n", c1_estado, c1_ponto, c2_estado, c2_ponto);
-            printf("Estado: %s vence!\n", c2_estado);
-        } else {
-            printf("*** Estado: %s X Estado: %s ***\n", c1_estado, c2_estado);
-            printf("Comparando Número de Pontos Turísticos...\n");
-            printf("Estado: %s - Pontos Turísticos: %d X Estado: %s - Pontos Turísticos: %d\n", c1_estado, c1_ponto, c2_estado, c2_ponto);
-            printf("Partida empatada!\n");
-        }
-        break;
-
-    case 5:
-        if (c1_inv_densidade > c2_inv_densidade){
-            printf("*** Estado: %s X Estado: %s ***\n", c1_estado, c2_estado);
-            printf("Comparando Densidade Demográfica...\n");
-            printf("Estado: %s - Área/hab: %.4f km²/hab X Estado: %s - Área/hab: %.4f km²/hab\n", c1_estado, c1_inv_densidade, c2_estado, c2_inv_densidade);
-            printf("Estado: %s vence!\n", c1_estado);
-        } else if (c1_inv_densidade < c2_inv_densidade){
-            printf("*** Estado: %s X Estado: %s ***\n", c1_estado, c2_estado);
-            printf("Comparando Densidade Demográfica...\n");
-            printf("Estado: %s - Área/hab: %.4f km²/hab² X Estado: %s - Área/hab: %.4f hab/km²\n", c1_estado, c1_inv_densidade, c2_estado, c2_inv_densidade);
-            printf("Estado: %s vence!\n", c2_estado);
-        } else {
-            printf("*** Estado: %s X Estado: %s ***\n", c1_estado, c2_estado);
-            printf("Comparando Densidade Demográfica...\n");
-            printf("Estado: %s - Área/hab: %.4f hab/km² X Estado: %s - Área/hab: %.4f hab/km²\n", c1_estado, c1_inv_densidade, c2_estado, c2_inv_densidade);
-            printf("Partida empatada!\n");
-        }
-        break;
-    
-    default:
-        printf("Opção inválida!\n");
-        break;
+    if(c1_resultado > c2_resultado){
+        printf("O vencedor é o estado: %s com %.2f pontos!\n", c1_estado, c1_resultado);
+    } else if (c2_resultado > c1_resultado){
+        printf("O vencedor é o estado: %s com %.2f pontos!\n", c2_estado, c2_resultado);
+    } else {
+        printf("Empate! Ambos os estados têm %.2f pontos!\n", c1_resultado);
     }
     
     return 0;
